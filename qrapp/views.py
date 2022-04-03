@@ -1,10 +1,12 @@
-
 from django.shortcuts import render
 from django.conf import settings
 from qrcode import *
 import random
 
 # Create your views here.
+
+    
+
 
 def index(request):
     if request.method=='POST':
