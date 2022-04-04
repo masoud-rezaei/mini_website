@@ -1,5 +1,5 @@
-# importing all the required modules
-from django.shortcuts import render, redirect
+# importing modules
+from django.shortcuts import render
 import pytube
 from pytube import YouTube
 
