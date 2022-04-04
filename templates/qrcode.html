@@ -1,26 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qr Code Generator</title>
 </head>
+
 <body>
-   
-        <h1>Qr Code Generator</h1>
-        <form method="POST">
-            {% csrf_token %}
-            <input type="text" name="url" placeholder="Enter to generate qrcode" required>
-            <button type="submit">Generate Qr Code </button>
-        </form>
+    <div class="container" style="background-color: rgb(225, 225, 239);">
         <div>
+            <h1 class="text-dark text-center" >Qr Code Generator</h1>
+            <form class="align-item-center d-flex flex-column" method="POST">
+                {% csrf_token %}
+
+                <input class="text-dark text-center alert alert-warning " type="text" name="url" placeholder="Enter to generate qrcode" required>
+                <button class="btn btn-success  px-2 m-4" type="submit">Generate Qr Code </button>
+            </form>
+        </div>
+
+        <div class="align-content-center">
             {% if img %}
-            <h3>your qr code is: <img src="/media/{{img}}"></h3>
+            <h3 class="px-2 m-4 alert-info">your qr code is: <img class="px-2  align-content-center" src="/media/{{img}}"></h3>
             {% endif %}
         </div>
-    </div>
     </div>
 </body>
 
